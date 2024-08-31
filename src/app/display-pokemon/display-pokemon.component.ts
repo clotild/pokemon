@@ -3,6 +3,7 @@ import { PokemonService } from '../pokemon.service';
 import { Pokemon } from '../model/pokemon';
 import { Result } from '../model/result';
 import { PokemonDetails } from '../model/pokemonsDetails';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-display-pokemon',
@@ -11,6 +12,7 @@ import { PokemonDetails } from '../model/pokemonsDetails';
 })
 export class DisplayPokemonComponent implements OnInit {
   pokemonData?: Pokemon;
+  switchImage: string = '';
   pokType: string = 'grass';
   resultFiltered?: Result[];
   searchString: string = '';
@@ -43,5 +45,25 @@ export class DisplayPokemonComponent implements OnInit {
         pok.name.toLowerCase().startsWith(this.searchString)
       );
     }
+  }
+
+  showFrontView(showed: Result) {
+    console.info('on est rentré dans un div', showed);
+    this.pokemonList.forEach((a) => {
+      if (a.name === showed.name) {
+        a.flipImage = true;
+      }
+    });
+    //trouver le pokemon dont le nom est égale au nom duquel on est rentré(showed)
+  }
+
+  showBackView(showed: Result) {
+    console.info('on est rentré dans un div', showed);
+    this.pokemonList.forEach((a) => {
+      if (a.name === showed.name) {
+        a.flipImage = false;
+      }
+    });
+    //trouver le pokemon dont le nom est égale au nom duquel on est rentré(showed)
   }
 }

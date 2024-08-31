@@ -1,7 +1,8 @@
-import { PokemonDetails } from "./pokemonsDetails";
+import { PokemonDetails } from './pokemonsDetails';
 
-export interface Result{
-    name: string;
-    url: string;
-    pokemonDetails: PokemonDetails;
+export interface Result {
+  name: string;
+  url: string;
+  pokemonDetails: PokemonDetails;
+  flipImage: boolean;
 }

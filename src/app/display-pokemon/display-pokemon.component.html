@@ -3,16 +3,17 @@
 
 <div *ngIf="pokemonList" class="container">
     <div class="row card-group">
-        <div *ngFor="let result of pokemonList" class="col-4 mb-3">
+        <div *ngFor="let result of pokemonList" class="col-4 mb-3" (mouseenter)="showFrontView(result)"
+            (mouseleave)=" showBackView(result)">
             <div *ngIf="result.pokemonDetails" class="card type-{{result.pokemonDetails.typePok.name}} pok-type">
-                <img class="card-img-top" src="{{result.pokemonDetails.images.backview}}" />
+                <img class="card-img-top"
+                    src="{{ result.flipImage? result.pokemonDetails.images.frontview : result.pokemonDetails.images.backview}}" />
                 <div class="card-body">
                     <a routerLink="/pokemon-details/{{result.url | encodeURI}}">{{result.name | uppercase}}</a>
                     <div class="mt-4">
                         <span class="pokemon-badge badge-strength">
                             {{result.pokemonDetails.typePok.name}}</span>
-                        <!-- <span class="pokemon-badge badge-weakness">
-                            {{result.pokemonDetails.types[1].type.name}}</span> -->
+
                     </div>
                 </div>
 
