@@ -1,0 +1,32 @@
+
+.card a {
+  color: #ffffff;
+}
+.pok-type[class*="grass"]{
+   background-color: #175a30; 
+   color: #ffffff;
+}
+.pok-type[class*="fire"]{
+   background-color: #9a3307; 
+   color: #ffffff;
+}
+.pok-type[class*="water"]{
+   background-color: #0d4b92; 
+   color: #ffffff;
+}
+.pok-type[class*="normal"]{
+   background-color: #4a4d4b; 
+   color: #ffffff;
+}
+.pok-type[class*="bug"]{
+   background-color: #95568f; 
+   color: #ffffff;
+}
+.badge-strength{
+    background-color: #13171c;
+    border-radius: 30%;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
